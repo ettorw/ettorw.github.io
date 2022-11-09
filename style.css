@@ -1,0 +1,38 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    background-color: black;
+}
+
+#bg {
+    margin: 0%;
+    min-width: 100%;
+    min-height: 100%
+}
+
+canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0%;
+}
+
+
+@media (max-width: 1100px) {
+
+    img .bg {
+        min-height: 100%;
+        width: auto;
+    }
+
+    canvas {
+        width: 0px;
+        height: 0px;
+    }
+}
