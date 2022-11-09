@@ -27,59 +27,126 @@ ul {
     padding: 0%;
     list-style-type: none;
 }
+p {
+    margin: 0%;
+}
 a {
     text-decoration: none;
 }
 
 
-/* header*/
-header {
-    position: relative;
-    height: 10vh;
-    width: 100%;    
-    background-color:#111111;
+/* global */
+.footer {
+    position: absolute; 
+    height: 4vh;
+    width: 100%;
+    bottom: 0%;
 }
-/* title */
-header .title { 
+.footer p{
+    position: absolute;
+    height: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2vh;
+}
+.footer a{
+    position: absolute;
+    height: fit-content;
+    top: 50%;
+    left: 0%;
+    transform: translate(0, -50%);
+    margin-left: 1vh;
+    font-size: 2vh;
+}
+.footer a:hover{
+    color: #d90511;
+}
+
+
+/* index */
+.index-wrapper{
+    position: absolute;
+    min-width: max-content;
+    min-height: max-content;
+    left: 20vh;
+    top: 20vh;
+}
+.index-title {
+    font-size: 7vh;
+    margin: 2vh;
+}
+.index-menu{
+    padding-left: 4vh;
+    margin: 2vh;
+}
+.index-menu ul li a{
+    font-size: 2.8vh;
+}
+.index-menu ul li a:hover{
+    color: #d90511;
+}
+#index-contact{
+    padding-left: 8vh;
+    margin: 2vh;
+    font-size: 2vh
+}
+#index-contact a:hover{
+    color: #d90511;
+}
+
+
+/* Physics Engine*/
+#soon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4vh;
+
+}
+
+/*
+title 
+.survyes-title { 
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    left: 0%;
-    top: 50%;
-    transform: translate(0, -50%);
+    height: 5vh;
+    left: 20%;
+    top: 20%;
     padding-left: 2.1%;    
 }
-header .title a{
+.title a{
     font-size: 4.5vh;
 }
 
-/* menu */
-header .menu {
+menu 
+.menu {
     position: absolute;
     display: flex;
-    height: 100%;
+    height: 5vh;
     align-items: center;
     right: 0%;
     top: 50%;
     transform: translate(0, -50%);
     padding-right: 2.1%;
 }
-header .menu ul{
+.menu ul{
     display: flex;
     min-width: fit-content;
     gap: 2vw;
 }
-header .menu ul li {
+.menu ul li {
     position: relative;
     white-space: nowrap;
     font-size: 2.8vh;
 }
-header .menu ul li a:hover{
+.menu ul li a:hover{
     color: #d90511;
 }
-
+*/
 /*.bg {
     margin: 0%;
     min-width: 100%;
