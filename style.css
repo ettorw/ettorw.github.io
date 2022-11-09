@@ -1,3 +1,5 @@
+/*#d90511 #111111 #999999*/
+
 /* font */
 @font-face{
     font-family: imbPlex;
@@ -5,6 +7,7 @@
 }
 * {
     font-family: imbPlex;
+    color:#999999;
 }
 html {
     height: 100%;
@@ -14,7 +17,7 @@ body {
     margin: 0;
     padding: 0;
     overflow:hidden;
-    background-color: rgb(255, 255, 255);
+    background-color:#111111;
 }
 h1{
     margin: 0%;
@@ -25,29 +28,31 @@ ul {
     list-style-type: none;
 }
 a {
-    height: 100%;
     text-decoration: none;
-    color: black;
 }
 
 
 /* header*/
 header {
     position: relative;
-    height: 45px;
+    height: 10vh;
     width: 100%;    
-    background-color: grey;
-
+    background-color:#111111;
 }
 /* title */
 header .title { 
     position: absolute;
     display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     left: 0%;
     top: 50%;
     transform: translate(0, -50%);
     padding-left: 2.1%;    
+}
+header .title a{
+    font-size: 4.5vh;
 }
 
 /* menu */
@@ -69,6 +74,10 @@ header .menu ul{
 header .menu ul li {
     position: relative;
     white-space: nowrap;
+    font-size: 2.8vh;
+}
+header .menu ul li a:hover{
+    color: #d90511;
 }
 
 /*.bg {
