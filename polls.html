@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Polls - Ettore Veronese</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="polls-wrapper">
+            <div class="polls-fill">
+                <input type="text" id="polls-title" name="title" placeholder="Title" > 
+                <input type="text" id="polls-option1" name="option1" placeholder="Option 1"/>
+                <input type="text" id="polls-option2" name="option2" placeholder="Option 2"/>
+            </div>
+            <div class="polls-settings"">
+                <a href = "#" onclick = "addOption();">Add option</a> <br>
+                <a href = "#" onclick = "removeOption();">Remove option</a> <br>
+                <a href = "#" onclick = "createPoll();">Create poll</a>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="index.html">Back</a>
+            <p>Polls - by Ettore Veronese</p>
+        </div>
+        <script src="polls.js"></script>
+    </body>
+</html>
