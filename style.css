@@ -20,7 +20,6 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow:hidden;
     background-color:#111111;
 }
 h1{
@@ -40,14 +39,29 @@ a {
 a:hover{
     color: #d90511;
 }
-
+input:focus{
+    outline: none;
+}
 
 /* global */
+.title {
+    font-size: 7vh;
+    margin-bottom: 2vh;
+}
+.menu{
+    padding-left: 4vh;
+    margin-bottom: 2vh;
+}
+.menu ul li a{
+    font-size: 2.8vh;
+}
 .footer {
-    position: absolute; 
+    position: fixed; 
     height: 4vh;
     width: 100%;
     bottom: 0%;
+    background-color: #111111;
+
 }
 .footer p{
     position: absolute;
@@ -77,17 +91,6 @@ a:hover{
     left: 20vh;
     top: 20vh;
 }
-.index-title {
-    font-size: 7vh;
-    margin-bottom: 2vh;
-}
-.index-menu{
-    padding-left: 4vh;
-    margin-bottom: 2vh;
-}
-.index-menu ul li a{
-    font-size: 2.8vh;
-}
 #index-contact{
     padding-left: 8vh;
     font-size: 2vh
@@ -98,15 +101,34 @@ a:hover{
     position: absolute;
     top: 20vh;
     left: 20vh;
+    font-size: 2.4vh;
+    padding-bottom: 6vh;
+}
+#polls-enter-code{
+    display: block;
+    border: none;
+    color: #999999;
+    background: transparent; 
+    padding: 0%;
+    font-size: 2.8vh;
+}
+#polls-menu a{
+    display: block;
 }
 #polls-title{
-    font-size: 2.8vh;
+    display: block;
+    border: none;
+    color: #999999;
+    background: transparent; 
+    padding: 0%;
+    margin-left: 2vh;
+    font-size: 2.4vh;
     margin: 0%;
 }
-.polls-fill{
+#polls-options{
     margin-bottom: 2vh;
 }
-.polls-fill input{
+#polls-options input{
     display: block;
     border: none;
     color: #999999;
@@ -115,11 +137,32 @@ a:hover{
     margin-left: 2vh;
     font-size: 2.4vh;
 }
-input:focus{
-    outline: none;
-}
-.polls-settings{
+#polls-addremove{
     font-size: 2.4vh;
+    margin-bottom: 2vh;
+}
+#polls-show-settings{
+    margin-bottom: 2vh;
+    font-size: 2.4vh;
+}
+#polls-settings{
+    font-size: 2.4vh;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+#polls-settings a{
+    display: block;
+}
+#polls-code{
+    display: block;
+    border: none;
+    color: #999999;
+    background: transparent; 
+    padding: 0%;
+    font-size: 2.4vh;
+}
+#polls-create-poll{
+    margin-top: 2vh;
 }
 /* Physics Engine*/
 #soon{

@@ -1,13 +1,13 @@
 
 // contact visibility
-let contactHidden = true
+let showContact = false
 document.getElementById('index-contact').style.visibility = 'hidden';
 function contactVisibility() {
-    if (contactHidden){
+    if (!showContact){
         document.getElementById('index-contact').style.visibility = 'visible';
-        contactHidden = false
+        showContact = true
     } else {
         document.getElementById('index-contact').style.visibility = 'hidden';
-        contactHidden = true
+        showContact = false
     }
 }
