@@ -99,6 +99,8 @@ input:focus{
 /* Polls */
 .polls-wrapper{
     position: absolute;
+    min-width: max-content;
+    min-height: max-content;
     top: 20vh;
     left: 20vh;
     font-size: 2.8vh;
@@ -112,6 +114,7 @@ input:focus{
     padding: 0%;
     font-size: 2.8vh;
 }
+/* menu */
 #polls-enter-code{
     display: block;
     border: none;
@@ -119,10 +122,21 @@ input:focus{
     background: transparent; 
     padding: 0%;
     font-size: 2.8vh;
+    margin-top: 2vh;
 }
 #polls-menu a{
     display: block;
 }
+#polls-menu li div{
+    display: flex;
+    align-items: center;
+}
+#polls-menu li span{
+    font-size: 2vh;
+    color: #d90511;
+    margin-left: 2vh;
+}
+/* create */
 #polls-title{
     font-size: 2.8vh;
     margin: 0%;
@@ -130,8 +144,6 @@ input:focus{
 #polls-options{
     padding-left: 2vh;
     margin-bottom: 2vh;
-    display: flex;
-    align-items: center;
 }
 #polls-options span{
     font-size: 2vh;
@@ -142,19 +154,28 @@ input:focus{
     font-size: 2.8vh;
     margin-bottom: 2vh;
 }
-#polls-insert-message{
+#polls-message{
     margin-bottom: 2vh;
 }
 #polls-show-settings{
     font-size: 2.8vh;
 }
 #polls-settings{
+    display: none;
     font-size: 2.8vh;
     margin-bottom: 2vh;
     padding-left: 2vh;
 }
 #polls-settings a{
     display: block;
+}
+#polls-set-max-val{
+    display: none;
+    margin-left: 2vh;
+}
+#polls-multiple-answers-val{
+    display: none;
+    margin-left: 2vh;
 }
 #polls-create-poll{
     margin-top: 2vh;
@@ -167,6 +188,28 @@ input:focus{
     font-size: 2vh;
     color: #d90511;
     margin-left: 2vh;
+}
+/* answer */
+#polls-answer-message{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 2vh;
+}
+#polls-answer div a{
+    display: block;
+    margin-left: 2vh;
+}
+#polls-lalala{
+    margin-bottom: 2vh;
+}
+
+/* result */
+#polls-results div a{
+    display: block;
+}
+#polls-idk{
+    margin-bottom: 2vh;
+    padding-left: 2vh;
 }
 /* Physics Engine*/
 #soon{

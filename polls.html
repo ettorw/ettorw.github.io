@@ -12,45 +12,69 @@
             <nav class = "menu">
                 <ul>
                     <li><a href = "#" onclick = "showCreate();">Create</a></li>
-                    <li><br></li>
                     <li>
-                        <input type="text" id="polls-enter-code" name="title" placeholder="Enter a code" > 
-                        <a href = "#" onclick = "createPoll();">Search Poll</a> 
+                        <input type="text" id="polls-enter-code" name="title" placeholder="Enter a code"> 
+                        <div>
+                            <a id="polls-search-button" href = "#" onclick = "searchPoll();">Search Poll</a>
+                        </div>
                     </li>
                 </ul>
             </nav>            
         </div>
 
+        <div class="polls-wrapper" id="polls-menu-ar">
+            <h1 class = "title">Polls</h1>
+            <nav class = "menu">
+                <ul>
+                    <li><a href = "#" onclick = "showAnswer();">Answer</a></li>
+                    <li><a href = "#" onclick = "showResults();">Results</a></li>
+                </ul>
+            </nav>            
+        </div>
+        
         <div class="polls-wrapper" id="polls-create">
-            <input type="text" id="polls-title" name="title" placeholder="Title" > 
+            <input type="text" id="polls-title" name="title" placeholder="Title"> 
             <div id="polls-options">
-                <div id="polls-options-container">
-                    <input type="text" id="polls-option1" placeholder="Option 1"/>
-                    <input type="text" id="polls-option2" placeholder="Option 2"/>
-                </div>
+                <input type="text" id="polls-option1" placeholder="Option 1"/>
+                <input type="text" id="polls-option2" placeholder="Option 2"/>
             </div>
             <div id="polls-addremove"">
                 <a href = "#" onclick = "addOption();">Add option</a> <br>
                 <a href = "#" onclick = "removeOption();">Remove option</a>
             </div>
-            <input type="text" id="polls-insert-message" placeholder="Message"/>
+            <input type="text" id="polls-message" placeholder="Message"/>
             <a id="polls-show-settings" href = "#" onclick = "showSettings();">Settings</a>
+            <div id='polls-settings'> 
+                <a href = '#' id='polls-set-max' onclick = 'setMax();'>Set max</a>
+                <input type="text" id="polls-set-max-val" placeholder="Val">
+                <a href = '#' id='polls-textField' onclick = 'textField();'>Text field</a> 
+                <a href = '#' id='polls-multiple-answers' onclick = 'multipleAnswers();'>Select multiple answers</a> 
+                <input type="text" id="polls-multiple-answers-val" placeholder="Val">
+            </div>
             <div id="polls-create-poll">
+                <input type="text" id="polls-code" placeholder="Poll code"/>
                 <div>
-                    <input type="text" id="polls-code" placeholder="Poll Code"/>
+                    <a href = "#" id="polls-create-button" onclick = "createPoll();">Create poll</a>
                 </div>
-                <a href = "#" onclick = "createPoll();">Create poll</a>
             </div>
         </div>
 
         <div class="polls-wrapper" id="polls-answer">
+            <span id="polls-answer-title"></span>
+            <p id="polls-answer-message"></p>
+            <div id="polls-lalala"></div>
+            <a href = "#" onclick = "sendAnswer();">Send answer</a>
 
         </div>
+
         <div class="polls-wrapper" id="polls-results">
+            <span id="polls-results-title"></span>
+            <div id="polls-idk"></div>
         </div>
 
         <div class="footer">
-            <a href="index.html">Back</a>
+            <a href = "polls.html" id="polls-back-menu">Back</a>
+            <a href="index.html" id="polls-back-home">Back</a>
             <p>Polls - by Ettore Veronese</p>
         </div>
         <script type="module" src="firebase.js"></script>
