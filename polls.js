@@ -61,19 +61,23 @@ function searchPoll(){
     pollData = getPoll(pollCode);
     pollData.then( snapshot => {
         pollData = snapshot.val();
-        showMenuAr();
-        document.getElementById("polls-answer-title").innerHTML = pollData.title;
-        document.getElementById("polls-answer-message").innerHTML = pollData.message;
-        for (let i = 1; i <= pollData.options.num; i++) {
-            op = "<a href = '#' id='polls-option-" + i + "' onclick = 'optionClick(event);'>" + pollData["options"]["option" + i] + "</a>";
-            optionHtml["option" + i] = pollData["options"]["option" + i];
-            document.getElementById("polls-lalala").insertAdjacentHTML('beforeend', op);
-        } 
-        document.getElementById("polls-results-title").innerHTML = pollData.title;
-        for (let i = 1; i <= pollData.options.num; i++) {
-            op = "<a href = '#' id='polls-result-" + i + "' onclick = 'resultClick(event);'>" + pollData["options"]["option" + i] +  " - " + pollData.results["option" + i] + "</a>";
-            optionHtml["option" + i] = pollData["options"]["option" + i];
-            document.getElementById("polls-idk").insertAdjacentHTML('beforeend', op);
+        if (snapshot.exists()){
+            showMenuAr();
+            document.getElementById("polls-answer-title").innerHTML = pollData.title;
+            document.getElementById("polls-answer-message").innerHTML = pollData.message;
+            for (let i = 1; i <= pollData.options.num; i++) {
+                op = "<a href = '#' id='polls-option-" + i + "' onclick = 'optionClick(event);'>" + pollData["options"]["option" + i] + "</a>";
+                optionHtml["option" + i] = pollData["options"]["option" + i];
+                document.getElementById("polls-lalala").insertAdjacentHTML('beforeend', op);
+            } 
+            document.getElementById("polls-results-title").innerHTML = pollData.title;
+            for (let i = 1; i <= pollData.options.num; i++) {
+                op = "<a href = '#' id='polls-result-" + i + "' onclick = 'resultClick(event);'>" + pollData["options"]["option" + i] +  " - " + pollData.results["option" + i] + "</a>";
+                optionHtml["option" + i] = pollData["options"]["option" + i];
+                document.getElementById("polls-idk").insertAdjacentHTML('beforeend', op);
+            }
+        } else {
+            return 1;
         }
     });   
 }
