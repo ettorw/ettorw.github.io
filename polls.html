@@ -2,80 +2,78 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Polls - Ettore Veronese</title>
+        <title>POLLS - ETTORE VERONESE</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="assets/fitgirll.ico" type="image/x-icon">
     </head>
     <body>
         <div class="polls-wrapper" id="polls-menu">
-            <h1 class = "title">Polls</h1>
-            <nav class = "menu">
+            <h1 class="title">POLLS</h1>
+            <nav class="menu">
                 <ul>
-                    <li><a href = "#" onclick = "showCreate();">Create</a></li>
-                    <li>
-                        <input type="text" id="polls-enter-code" name="title" placeholder="Enter a code"> 
-                        <div>
-                            <a id="polls-search-button" href = "#" onclick = "searchPoll();">Search Poll</a>
-                        </div>
-                    </li>
+                    <li><a href="#" onclick = "showCreate();">CREATE</a></li>
+                    <li><input type="text" id="polls-enter-code" name="title" placeholder="ENTER A CODE"></li>
+                    <li><a id="polls-search-button" href = "#" onclick = "searchPoll();">SEARCH POLL</a></li>
+                    <li><span class="polls-error" id="polls-search-error"></span></li>
                 </ul>
             </nav>            
         </div>
 
         <div class="polls-wrapper" id="polls-menu-ar">
-            <h1 class = "title">Polls</h1>
-            <nav class = "menu">
+            <h1 class="title">POLLS</h1>
+            <nav class="menu">
                 <ul>
-                    <li><a href = "#" onclick = "showAnswer();">Answer</a></li>
-                    <li><a href = "#" onclick = "showResults();">Results</a></li>
+                    <li><a href = "#" onclick = "showAnswer();">ANSWER</a></li>
+                    <li><a href = "#" onclick = "showResults();">RESULTS</a></li>
                 </ul>
             </nav>            
         </div>
         
         <div class="polls-wrapper" id="polls-create">
-            <input type="text" id="polls-title" name="title" placeholder="Title"> 
+            <input type="text" id="polls-title" name="title" placeholder="TITLE"> 
+            <input type="text" id="polls-message" placeholder="MESSAGE"/>
             <div id="polls-options">
-                <input type="text" id="polls-option1" placeholder="Option 1"/>
-                <input type="text" id="polls-option2" placeholder="Option 2"/>
+                <input type="text" id="polls-option1" placeholder="OPTION 1"/>
+                <input type="text" id="polls-option2" placeholder="OPTION 2"/>
             </div>
-            <div id="polls-addremove"">
-                <a href = "#" onclick = "addOption();">Add option</a> <br>
-                <a href = "#" onclick = "removeOption();">Remove option</a>
-            </div>
-            <input type="text" id="polls-message" placeholder="Message"/>
-            <a id="polls-show-settings" href = "#" onclick = "showSettings();">Settings</a>
+            <a href = "#" onclick = "addOption();">ADD OPTION</a> <br>
+            <a href = "#" onclick = "removeOption();">REMOVE OPTION</a>
+            <a id="polls-show-settings" href = "#" onclick = "showSettings();">SETTINGS</a>
             <div id='polls-settings'> 
-                <a href = '#' id='polls-set-max' onclick = 'setMax();'>Set max</a>
-                <input type="text" id="polls-set-max-val" placeholder="Val">
-                <a href = '#' id='polls-textField' onclick = 'textField();'>Text field</a> 
-                <a href = '#' id='polls-multiple-answers' onclick = 'multipleAnswers();'>Select multiple answers</a> 
-                <input type="text" id="polls-multiple-answers-val" placeholder="Val">
+                <a href = '#' id='polls-set-max' onclick = 'setMax();'>SET MAX</a>
+                <input type="text" id="polls-set-max-val" placeholder="VAL">
+                <a href = '#' id='polls-textField' onclick = 'textField();'>TEXT FIELD</a> 
+                <a href = '#' id='polls-multiple-answers' onclick = 'multipleAnswers();'>SELECT MULIPLE ANSWERS</a> 
+                <input type="text" id="polls-multiple-answers-val" placeholder="VAL">
             </div>
             <div id="polls-create-poll">
-                <input type="text" id="polls-code" placeholder="Poll code"/>
-                <div>
-                    <a href = "#" id="polls-create-button" onclick = "createPoll();">Create poll</a>
-                </div>
+                <input type="text" id="polls-code" placeholder="CODE"/>
+                <a href = "#" id="polls-create-button" onclick = "createPoll();">CREATE POLL</a>
+                <span class="polls-error" id="polls-create-error"></span>
             </div>
         </div>
 
         <div class="polls-wrapper" id="polls-answer">
             <span id="polls-answer-title"></span>
             <p id="polls-answer-message"></p>
-            <div id="polls-lalala"></div>
-            <a href = "#" onclick = "sendAnswer();">Send answer</a>
-
+            <input type="text" id="polls-text-field" placeholder="SOMETHING">
+            <a href = "#" onclick = "sendAnswer();">SEND ANSWER</a>
+            <span class="polls-error" id="polls-answer-error"></span>
+            
         </div>
 
         <div class="polls-wrapper" id="polls-results">
             <span id="polls-results-title"></span>
-            <div id="polls-idk"></div>
+            <div id="polls-results-contnent">
+                <span id="polls-idk"></span>
+            </div>
         </div>
 
         <div class="footer">
-            <a href = "polls.html" id="polls-back-menu">Back</a>
-            <a href="index.html" id="polls-back-home">Back</a>
-            <p>Polls - by Ettore Veronese</p>
+            <a href = "polls.html" id="polls-back-menu">BACK</a>
+            <a href="index.html" id="polls-back-home">BACK</a>
+            <a href="#" id="polls-back-results" onclick="resultsBack()">BACK</a>
+            <p>POLLS - BY ETTORE VERONESE</p>
         </div>
         <script type="module" src="firebase.js"></script>
         <script src="polls.js"></script>

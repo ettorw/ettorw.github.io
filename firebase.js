@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+import { getDatabase, ref, get, set, push } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBISAeynb6H86lVNasCqhMHkGU1IiTvACM",
@@ -21,7 +21,9 @@ window.sendPoll = function(pollCode, pollData){
 window.getPoll = function(pollCode){
     return get(ref(db, pollCode));
 }
-window.sendVote = function(pollCode, option){
-    set(ref(db, pollCode + "/results/option" + option), pollData["results"]["option" + option] + 1);
-    
+window.sendVote = function(pollCode, option, name){
+    set(ref(db, pollCode + "/results/option" + option + "/val"), pollData["results"]["option" + option]["val"] + 1);
+    if (pollData.settings.textField){
+        push(ref(db, pollCode + "/results/option" + option + "/names"),  name)
+    }
 }

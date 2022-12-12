@@ -44,18 +44,10 @@ let pollCode;
 
 
 // menu
-document.getElementById('polls-create').style.visibility = 'hidden';
-document.getElementById('polls-answer').style.visibility = 'hidden';
-document.getElementById('polls-results').style.visibility = 'hidden';
-document.getElementById('polls-menu-ar').style.visibility = 'hidden';
-
 function searchPoll(){
     pollCode = document.getElementById('polls-enter-code').value;
     if (/\s/.test(pollCode) || /^ *$/.test(pollCode)) {
-        if(!errorDisplayed.search){
-            document.getElementById('polls-search-button').insertAdjacentHTML('afterend', "<span>Error: fill in all fields</span>");
-            errorDisplayed.search = true;
-        }
+        document.getElementById("polls-search-error").innerHTML = "ERROR";
         return 1;
     }
     pollData = getPoll(pollCode);
@@ -65,16 +57,21 @@ function searchPoll(){
             showMenuAr();
             document.getElementById("polls-answer-title").innerHTML = pollData.title;
             document.getElementById("polls-answer-message").innerHTML = pollData.message;
+            if (pollData.settings.textField){
+                document.getElementById("polls-text-field").style.display = 'block';
+            }
             for (let i = 1; i <= pollData.options.num; i++) {
                 op = "<a href = '#' id='polls-option-" + i + "' onclick = 'optionClick(event);'>" + pollData["options"]["option" + i] + "</a>";
                 optionHtml["option" + i] = pollData["options"]["option" + i];
-                document.getElementById("polls-lalala").insertAdjacentHTML('beforeend', op);
+                document.getElementById("polls-answer-message").insertAdjacentHTML('afterend', op);
             } 
             document.getElementById("polls-results-title").innerHTML = pollData.title;
             for (let i = 1; i <= pollData.options.num; i++) {
-                op = "<a href = '#' id='polls-result-" + i + "' onclick = 'resultClick(event);'>" + pollData["options"]["option" + i] +  " - " + pollData.results["option" + i] + "</a>";
+                op = "<a href = '#' id='polls-result-" + i + "' onclick = 'resultClick(id);'>" + pollData["options"]["option" + i] +  " - " + pollData.results["option" + i]["val"] + "</a>";
                 optionHtml["option" + i] = pollData["options"]["option" + i];
                 document.getElementById("polls-idk").insertAdjacentHTML('beforeend', op);
+                op = "<div id='polls-text-field-" + i + "' class='polls-results-text-field'> <span class='polls-gdkjsagnk' id='polls-text-field-" + i + "-title'>" + pollData["options"]["option" + i] + "</span></div>";
+                document.getElementById("polls-title").insertAdjacentHTML('afterend', op);
             }
         } else {
             return 1;
@@ -83,25 +80,25 @@ function searchPoll(){
 }
 
 function showMenuAr(){
-    document.getElementById('polls-menu-ar').style.visibility = 'visible';
-    document.getElementById('polls-menu').style.visibility = 'hidden';
+    document.getElementById('polls-menu-ar').style.display = 'flex';
+    document.getElementById('polls-menu').style.display = 'none';
     document.getElementById('polls-back-home').style.visibility = 'hidden'; 
     document.getElementById('polls-back-menu').style.visibility = 'visible';
 }
 function showCreate(){
-    document.getElementById('polls-create').style.visibility = 'visible';
-    document.getElementById('polls-menu').style.visibility = 'hidden';
+    document.getElementById('polls-create').style.display = 'flex';
+    document.getElementById('polls-menu').style.display = 'none';
     document.getElementById('polls-back-home').style.visibility = 'hidden'; 
     document.getElementById('polls-back-menu').style.visibility = 'visible';
 }
 function showAnswer(){
-    document.getElementById('polls-answer').style.visibility = 'visible';
-    document.getElementById('polls-menu-ar').style.visibility = 'hidden';
+    document.getElementById('polls-answer').style.display = 'flex';
+    document.getElementById('polls-menu-ar').style.display = 'none';
     
 }
 function showResults(){
-    document.getElementById('polls-results').style.visibility = 'visible';
-    document.getElementById('polls-menu-ar').style.visibility = 'hidden';
+    document.getElementById('polls-results').style.display = 'flex';
+    document.getElementById('polls-menu-ar').style.display = 'none';
 }
 
 // create 
@@ -109,7 +106,7 @@ function addOption(){
     if (optionIndex < maxOptions){
         optionNode = document.getElementById('polls-option' + optionIndex);
         optionIndex++;
-        option = "<input type='text' id='polls-option" + optionIndex + "' name='option" + optionIndex + "' placeholder='Option "+ optionIndex +"'/>";
+        option = "<input type='text' id='polls-option" + optionIndex + "' placeholder='Option "+ optionIndex +"'/>";
         optionNode.insertAdjacentHTML('afterend', option);
     }
 }
@@ -176,8 +173,14 @@ function createPoll(){
             "multipleAnswers": selected.multipleAnswers
         },
         "results": {
-            "option1": 0,
-            "option2": 0
+            "option1": {
+                "val": 0,
+                "names": ""
+            },
+            "option2": {
+                "val": 0,
+                "names": ""
+            },
         }
     }
 
@@ -187,17 +190,11 @@ function createPoll(){
             if(mVal > 0){
                 pollData.settings.setMaxVal = mVal;
             } else {
-                if(!errorDisplayed.create){
-                    document.getElementById('polls-create-button').insertAdjacentHTML('afterend', "<span>Error</span>");
-                    errorDisplayed.create = true;
-                }
+                document.getElementById("polls-create-error").innerHTML = "ERROR";
                 return 1;
             }
         } else {
-            if(!errorDisplayed.create){
-                document.getElementById('polls-create-button').insertAdjacentHTML('afterend', "<span>Error</span>");
-                errorDisplayed.create = true;
-            }
+            document.getElementById("polls-create-error").innerHTML = "ERROR";
             return 1;
         }
     }
@@ -207,47 +204,53 @@ function createPoll(){
             if(maVal > 0 && maVal <= 10){
                 pollData.settings.multipleAnswersVal = maVal;
             } else {
-                if(!errorDisplayed.create){
-                    document.getElementById('polls-create-button').insertAdjacentHTML('afterend', "<span>Error</span>");
-                    errorDisplayed.create = true;
-                }
+                document.getElementById("polls-create-error").innerHTML = "ERROR";
                 return 1;
             }
         } else {
-            if(!errorDisplayed.create){
-                document.getElementById('polls-create-button').insertAdjacentHTML('afterend', "<span>Error</span>");
-                errorDisplayed.create = true;
-            }
+            document.getElementById("polls-create-error").innerHTML = "ERROR";
             return 1;
         }
-        
     }
 
     pollData.options.num = 2;
     for (let i = 3; i <= optionIndex; i++){
         console.log("it's working")
         pollData["options"]["option" + i] = document.getElementById("polls-option" + i).value;
-        pollData["results"]["option" + i] = 0;
+        pollData["results"]["option" + i] = {
+            "val": 0,
+            "names": ""
+        }
+        if (/^ *$/.test(pollData.options["option" + i])) {
+            document.getElementById("polls-create-error").innerHTML = "ERROR";
+            return 1;
+        }
         pollData.options.num = i;
     }
     
     if (/^ *$/.test(pollData.options.option1) || /^ *$/.test(pollData.options.option2)) {
-        if(!errorDisplayed.create){
-            document.getElementById('polls-create-button').insertAdjacentHTML('afterend', "<span>Error</span>");
-            errorDisplayed.create = true;
-        }
+        document.getElementById("polls-create-error").innerHTML = "ERROR";
+        return 1;
+    }
+
+    if (/^ *$/.test(pollData.title)) {
+        document.getElementById("polls-create-error").innerHTML = "ERROR";
+        return 1;
+    }
+
+    if (/^ *$/.test(pollData.message)) {
+        document.getElementById("polls-create-error").innerHTML = "ERROR";
         return 1;
     }
 
     if (/\s/.test(pollCode) || /^ *$/.test(pollCode)) {
-        if(!errorDisplayed.create){
-            document.getElementById('polls-create-button').insertAdjacentHTML('afterend', "<span>Error</span>");
-            errorDisplayed.create = true;
-        }
+        document.getElementById("polls-create-error").innerHTML = "ERROR";
         return 1;
     }
     
     sendPoll(pollCode, pollData);
+    document.getElementById("polls-create-error").innerHTML = "POLL CREATED SUCCESFULLY";
+    document.getElementById("polls-create-error").style.color = "#33CC00";
 }
 
 // answer
@@ -257,9 +260,7 @@ function optionClick(e){
             selected.options.option1 = !selected.options.option1;
             if(!selected.options.option1){
                 document.getElementById(e.target.id).innerHTML = optionHtml["option1"];
-                selected.optionNum -= 1;
             } else {
-                selected.optionNum += 1;
                 document.getElementById(e.target.id).innerHTML = "! " + optionHtml["option1"];
             }
             break;
@@ -267,9 +268,7 @@ function optionClick(e){
             selected.options.option2 = !selected.options.option2;
             if(!selected.options.option2){
                 document.getElementById(e.target.id).innerHTML = optionHtml["option2"];
-                selected.optionNum -= 1;
             } else {
-                selected.optionNum += 1;
                 document.getElementById(e.target.id).innerHTML = "! " + optionHtml["option2"];
             }
             break;
@@ -277,9 +276,7 @@ function optionClick(e){
             selected.options.option3 = !selected.options.option3;
             if(!selected.options.option3){
                 document.getElementById(e.target.id).innerHTML = optionHtml["option3"];
-                selected.optionNum -= 1;
             } else {
-                selected.optionNum += 1;
                 document.getElementById(e.target.id).innerHTML = "! " + optionHtml["option3"];
             }
             break;
@@ -287,9 +284,7 @@ function optionClick(e){
             selected.options.option4 = !selected.options.option4;
             if(!selected.options.option4){
                 document.getElementById(e.target.id).innerHTML = optionHtml["option4"];
-                selected.optionNum -= 1;
             } else {
-                selected.optionNum += 1;
                 document.getElementById(e.target.id).innerHTML = "! " + optionHtml["option4"];
             }
             break;
@@ -297,9 +292,7 @@ function optionClick(e){
             selected.options.option5 = !selected.options.option5;
             if(!selected.options.option5){
                 document.getElementById(e.target.id).innerHTML = optionHtml["option5"];
-                selected.optionNum -= 1;
             } else {
-                selected.optionNum += 1;
                 document.getElementById(e.target.id).innerHTML = "! " + optionHtml["option5"];
             }
             break;
@@ -307,9 +300,7 @@ function optionClick(e){
             selected.options.option6 = !selected.options.option6;
             if(!selected.options.option6){
                 document.getElementById(e.target.id).innerHTML = optionHtml["option6"];
-                selected.optionNum -= 1;
             } else {
-                selected.optionNum += 1;
                 document.getElementById(e.target.id).innerHTML = "! " + optionHtml["option6"];
             }
             break;
@@ -317,9 +308,7 @@ function optionClick(e){
             selected.options.option7 = !selected.options.option7;
             if(!selected.options.option7){
                 document.getElementById(e.target.id).innerHTML = optionHtml["option7"];
-                selected.optionNum -= 1;
             } else {
-                selected.optionNum += 1;
                 document.getElementById(e.target.id).innerHTML = "! " + optionHtml["option7"];
             }
             break;
@@ -327,19 +316,15 @@ function optionClick(e){
             selected.options.option8 = !selected.options.option8;
             if(!selected.options.option8){
                 document.getElementById(e.target.id).innerHTML = optionHtml["option8"];
-                selected.optionNum -= 1;
             } else {
-                selected.optionNum += 1;
                 document.getElementById(e.target.id).innerHTML = "! " + optionHtml["option8"];
             }
             break;
         case "polls-option-9": 
             selected.options.option9 = !selected.options.option9;
-            if(!selected.options.optio91){
+            if(!selected.options.option9){
                 document.getElementById(e.target.id).innerHTML = optionHtml["option9"];
-                selected.optionNum -= 1;
             } else {
-                selected.optionNum += 1;
                 document.getElementById(e.target.id).innerHTML = "! " + optionHtml["option9"];
             }
             break;
@@ -347,9 +332,7 @@ function optionClick(e){
             selected.options.option10 = !selected.options.option10;
             if(!selected.options.option10){
                 document.getElementById(e.target.id).innerHTML = optionHtml["option10"];
-                selected.optionNum -= 1;
             } else {
-                selected.optionNum += 1;
                 document.getElementById(e.target.id).innerHTML = "! " + optionHtml["option10"];
             }
             break;
@@ -358,47 +341,88 @@ function optionClick(e){
 
 function sendAnswer(){
     let n = 1;
-    if(pollData.settings.multipleAnswers){
-        n = pollData.settings.multipleAnswersVal;
+    let namee = null;
+    if (pollData.settings.textField){
+        namee = document.getElementById("polls-text-field").value;
+        if (/^ *$/.test(namee)){
+            document.getElementById("polls-answer-error").innerHTML = "ERROR";
+            return 1;
+        }
     }
-    if(selected.optionNum > n){
-        console.log("lalal")
-        return 1;
+    
+    for (let i = 1; i <= 10; i++){
+        if (selected.options["option" + i]){
+        selected.optionNum += 1;
+        }
     }
 
+    if (pollData.settings.multipleAnswers){
+        if(selected.optionNum > pollData.settings.multipleAnswersVal){
+            return 1;
+        }
+    } else if(selected.optionNum > 1){
+        document.getElementById("polls-answer-error").innerHTML = "ERROR";
+        return 1;
+    }
+    if (selected.optionNum < 1){
+        document.getElementById("polls-answer-error").innerHTML = "ERROR";
+        return 1;
+    }
     if(selected.options.option1){
-        sendVote(pollCode, 1);
+        sendVote(pollCode, 1, namee);
     }
     if(selected.options.option2){
-        sendVote(pollCode, 2);
+        sendVote(pollCode, 2, namee);
     }
     if(selected.options.option3){
-        sendVote(pollCode, 3);
+        sendVote(pollCode, 3, namee);
     }
     if(selected.options.option4){
-        sendVote(pollCode, 4);
+        sendVote(pollCode, 4, namee);
     }
     if(selected.options.option5){
-        sendVote(pollCode, 5);
+        sendVote(pollCode, 5, namee);
     }
     if(selected.options.option6){
-        sendVote(pollCode, 6);
+        sendVote(pollCode, 6, namee);
     }
     if(selected.options.option7){
-        sendVote(pollCode, 7);
+        sendVote(pollCode, 7, namee);
     }
     if(selected.options.option8){
-        sendVote(pollCode, 8);
+        sendVote(pollCode, 8, namee);
     }
     if(selected.options.option9){
-        sendVote(pollCode, 9);
+        sendVote(pollCode, 9, namee);
     }
     if(selected.options.option10){
-        sendVote(pollCode, 10);
+        sendVote(pollCode, 10, namee);
     }
+
+    document.getElementById("polls-answer-error").innerHTML = "ANSWER SENT";
+    document.getElementById("polls-answer-error").style.color = "#33CC00";
 }
 
 // results
+
+let esrsajgrkfa
 function resultClick(e){
-    
+    esrsajgrkfa = e.substring(e.length - 1);
+    for (let answer in pollData["results"]["option" + esrsajgrkfa]["names"]){
+        op = "<span>" + pollData["results"]["option" + esrsajgrkfa]["names"][answer] + "</span>";
+        document.getElementById("polls-text-field-" + esrsajgrkfa + "-title").insertAdjacentHTML('afterend', op);
+    }
+    document.getElementById("polls-text-field-" + esrsajgrkfa).style.display = "flex";
+    document.getElementById("polls-results-title").style.display = "none";
+    document.getElementById("polls-results-contnent").style.display = "none";
+    document.getElementById("polls-back-results").style.visibility = "visible";
+
+}
+
+function resultsBack(){
+    document.getElementById("polls-text-field-" + esrsajgrkfa).style.display = "none";
+    document.getElementById("polls-results-title").style.display = "block";
+    document.getElementById("polls-results-contnent").style.display = "flex";
+    document.getElementById("polls-back-results").style.visibility = "hidden";
+
 }

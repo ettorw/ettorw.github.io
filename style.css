@@ -1,10 +1,10 @@
 /*#d90511 #111111 #999999*/
 /*  1: 7vh
-    2: 2.8vh
+    2: 2vw
     3: 2.4vh
     3: 2.0vh*/
 
-/* font */
+/* --- GLOBAL --- */
 @font-face{
     font-family: imbPlex;
     src: url(assets/IBM_Plex_Sans/IBMPlexSans-Regular.ttf);
@@ -21,6 +21,7 @@ body {
     margin: 0;
     padding: 0;
     background-color:#111111;
+    overflow-x: hidden 
 }
 h1{
     margin: 0%;
@@ -43,21 +44,26 @@ input:focus{
     outline: none;
 }
 
-/* global */
-.title {
-    font-size: 7vh;
-    margin-bottom: 2vh;
+
+/* --- DESKTOP --- */
+
+.title{
+    font-size: 4.5vh;
+    margin-bottom: 3.5vh;
 }
 .menu{
-    padding-left: 4vh;
-    margin-bottom: 2vh;
+    margin-bottom: 2.5vh;
+}
+.menu ul li{
+    margin-bottom: 1vh;
 }
 .menu ul li a{
-    font-size: 2.8vh;
+    font-size: 3.5vh;   
 }
+
 .footer {
     position: fixed; 
-    height: 4vh;
+    height: 4.5vh;
     width: 100%;
     bottom: 0%;
     background-color: #111111;
@@ -69,7 +75,7 @@ input:focus{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2vh;
+    font-size: 2.5vh;
     white-space: nowrap;
 }
 .footer a{
@@ -79,51 +85,60 @@ input:focus{
     left: 0%;
     transform: translate(0, -50%);
     margin-left: 1vh;
-    font-size: 2vh;
+    font-size: 2.5vh;
 }
 
 
 /* index */
-.index-wrapper{
+#index-wrapper{
     position: absolute;
-    min-width: max-content;
+    width: 100%;
     min-height: max-content;
-    left: 20vh;
     top: 20vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
 #index-contact{
-    padding-left: 8vh;
-    font-size: 2vh
+    display: flex;
+    flex-direction: column;
+    font-size: 3.5vh;
+}
+#index-contact p{
+    margin-bottom: 1vh;
+}
+#index-contact a{
+    margin-bottom: 1vh;
 }
 
 /* Polls */
 .polls-wrapper{
     position: absolute;
-    min-width: max-content;
+    width: 100%;
     min-height: max-content;
     top: 20vh;
-    left: 20vh;
-    font-size: 2.8vh;
-    padding-bottom: 6vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 .polls-wrapper input{
-    display: block;
     border: none;
     color: #999999;
     background: transparent; 
     padding: 0%;
-    font-size: 2.8vh;
+    font-size: 3.5vh;
+    text-align: center;
+}
+.polls-error{
+    font-size: 2.5vh;
+    color: #d90511;
 }
 /* menu */
-#polls-enter-code{
-    display: block;
-    border: none;
-    color: #999999;
-    background: transparent; 
-    padding: 0%;
-    font-size: 2.8vh;
-    margin-top: 2vh;
-}
 #polls-menu a{
     display: block;
 }
@@ -131,85 +146,110 @@ input:focus{
     display: flex;
     align-items: center;
 }
-#polls-menu li span{
-    font-size: 2vh;
-    color: #d90511;
-    margin-left: 2vh;
+#polls-menu-ar{
+    display: none;
 }
 /* create */
+#polls-create{
+    display: none;
+    font-size: 3.5vh;
+    flex-direction: column;
+}
+#polls-create a{
+    margin-bottom: 1vh;
+}
 #polls-title{
-    font-size: 2.8vh;
     margin: 0%;
 }
-#polls-options{
-    padding-left: 2vh;
-    margin-bottom: 2vh;
-}
-#polls-options span{
-    font-size: 2vh;
-    color: #d90511;
-    margin-left: 2vh;
-}
-#polls-addremove{
-    font-size: 2.8vh;
-    margin-bottom: 2vh;
-}
 #polls-message{
-    margin-bottom: 2vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+#polls-options{
+    display: flex;
+    flex-direction: column;
+}
+#polls-options input{
+    margin-bottom: 1vh;
 }
 #polls-show-settings{
-    font-size: 2.8vh;
+    font-size: 3.5vh;
 }
 #polls-settings{
     display: none;
-    font-size: 2.8vh;
-    margin-bottom: 2vh;
-    padding-left: 2vh;
+    font-size: 3.5vh;
 }
 #polls-settings a{
     display: block;
 }
 #polls-set-max-val{
     display: none;
-    margin-left: 2vh;
 }
 #polls-multiple-answers-val{
     display: none;
-    margin-left: 2vh;
 }
 #polls-create-poll{
-    margin-top: 2vh;
-}
-#polls-create-poll div{
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
-#polls-create-poll div span{
-    font-size: 2vh;
-    color: #d90511;
-    margin-left: 2vh;
+#polls-create-button{
+    font-size: 3.5vh;
 }
+#polls-code{
+    margin-bottom: 1vh;
+}
+
 /* answer */
+#polls-answer{
+    display: none;
+    font-size: 3.5vh;
+}
+#polls-answer a{
+    margin-bottom: 1vh;
+}
+#polls-answer-title{
+    font-size: 3.5vh;
+}
 #polls-answer-message{
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    margin-left: 2vh;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+}
+#polls-text-field{
+    display: none;
+    margin-bottom: 1vh;
 }
 #polls-answer div a{
     display: block;
-    margin-left: 2vh;
-}
-#polls-lalala{
-    margin-bottom: 2vh;
 }
 
 /* result */
-#polls-results div a{
+#polls-back-results{
+    visibility: hidden;
+}
+#polls-results{
+    display: none;
+    font-size: 3.5vh;
+}
+#polls-results-title{
+    font-size: 3.5vh;
+}
+.polls-gdkjsagnk{
+    margin-bottom: 1vh;
+}
+.polls-results-text-field{
+    display: none;
+}
+.polls-results-text-field span{
     display: block;
 }
-#polls-idk{
-    margin-bottom: 2vh;
-    padding-left: 2vh;
+#polls-results a{
+    display: block;
+}
+#polls-results p{
+    display: none;
+}
+#polls-results-contnent{
+    padding-top: 1vh;
 }
 /* Physics Engine*/
 #soon{
@@ -217,9 +257,9 @@ input:focus{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 4vh;
+    font-size: 2vw;
 
-}
+
 
 /*
 title 
@@ -256,7 +296,7 @@ menu
 .menu ul li {
     position: relative;
     white-space: nowrap;
-    font-size: 2.8vh;
+    font-size: 2vw;
 }
 .menu ul li a:hover{
     color: #d90511;
@@ -267,8 +307,10 @@ menu
     min-width: 100%;
     min-height: 100%
 }*/
+}
 
 
+/* --- MOBILE --- */
 @media (max-width: 1100px) {
 
 }
