@@ -12,6 +12,7 @@
 * {
     font-family: imbPlex;
     color:#999999;
+    text-transform: uppercase;
 }
 html {
     height: 100%;
@@ -208,11 +209,11 @@ input:focus{
     margin-bottom: 1vh;
 }
 #polls-answer-title{
-    font-size: 3.5vh;
+    font-size: 4.5vh;
 }
 #polls-answer-message{
     margin-bottom: 1vh;
-    margin-top: 1vh;
+    margin-top: 3.5vh;
 }
 #polls-text-field{
     display: none;
@@ -231,16 +232,20 @@ input:focus{
     font-size: 3.5vh;
 }
 #polls-results-title{
-    font-size: 3.5vh;
+    font-size: 4.5vh;
 }
-.polls-gdkjsagnk{
+#polls-idk a{
     margin-bottom: 1vh;
 }
 .polls-results-text-field{
     display: none;
+    flex-direction: column;
 }
 .polls-results-text-field span{
-    display: block;
+    margin-bottom: 1vh;
+}
+.polls-gdkjsagnk{
+    margin-bottom: 3.5vh;
 }
 #polls-results a{
     display: block;
@@ -249,7 +254,7 @@ input:focus{
     display: none;
 }
 #polls-results-contnent{
-    padding-top: 1vh;
+    padding-top: 3.5vh;
 }
 /* Physics Engine*/
 #soon{

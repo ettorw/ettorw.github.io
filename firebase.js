@@ -15,8 +15,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
 
-window.sendPoll = function(pollCode, pollData){
-    set(ref(db, pollCode), pollData);
+window.sendPoll = function(pollTitle, pollData){
+    set(ref(db, pollTitle), pollData);
 }
 window.getPoll = function(pollCode){
     return get(ref(db, pollCode));

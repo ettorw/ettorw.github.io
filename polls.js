@@ -70,8 +70,12 @@ function searchPoll(){
                 op = "<a href = '#' id='polls-result-" + i + "' onclick = 'resultClick(id);'>" + pollData["options"]["option" + i] +  " - " + pollData.results["option" + i]["val"] + "</a>";
                 optionHtml["option" + i] = pollData["options"]["option" + i];
                 document.getElementById("polls-idk").insertAdjacentHTML('beforeend', op);
-                op = "<div id='polls-text-field-" + i + "' class='polls-results-text-field'> <span class='polls-gdkjsagnk' id='polls-text-field-" + i + "-title'>" + pollData["options"]["option" + i] + "</span></div>";
-                document.getElementById("polls-title").insertAdjacentHTML('afterend', op);
+                op = "<div id='polls-text-field-" + i + "' class='polls-results-text-field'> <span class='polls-gdkjsagnk' id='polls-text-field-" + i + "-title'>" + pollData["options"]["option" + i] +  " - " + pollData.results["option" + i]["val"] + "</span></div>";
+                document.getElementById("polls-results-title").insertAdjacentHTML('afterend', op);
+                for (let answer in pollData["results"]["option" + i]["names"]){
+                    op = "<span>" + pollData["results"]["option" + i]["names"][answer] + "</span>";
+                    document.getElementById("polls-text-field-" + i + "-title").insertAdjacentHTML('afterend', op);
+                }
             }
         } else {
             return 1;
@@ -405,22 +409,18 @@ function sendAnswer(){
 
 // results
 
-let esrsajgrkfa
+let esrsajgrkfalseaflsfnmaslfnldkasavnsfkjsacnasdds
 function resultClick(e){
-    esrsajgrkfa = e.substring(e.length - 1);
-    for (let answer in pollData["results"]["option" + esrsajgrkfa]["names"]){
-        op = "<span>" + pollData["results"]["option" + esrsajgrkfa]["names"][answer] + "</span>";
-        document.getElementById("polls-text-field-" + esrsajgrkfa + "-title").insertAdjacentHTML('afterend', op);
-    }
-    document.getElementById("polls-text-field-" + esrsajgrkfa).style.display = "flex";
+    esrsajgrkfalseaflsfnmaslfnldkasavnsfkjsacnasdds = e.substring(e.length - 1);
+
+    document.getElementById("polls-text-field-" + esrsajgrkfalseaflsfnmaslfnldkasavnsfkjsacnasdds).style.display = "flex";
     document.getElementById("polls-results-title").style.display = "none";
     document.getElementById("polls-results-contnent").style.display = "none";
     document.getElementById("polls-back-results").style.visibility = "visible";
-
 }
 
 function resultsBack(){
-    document.getElementById("polls-text-field-" + esrsajgrkfa).style.display = "none";
+    document.getElementById("polls-text-field-" + esrsajgrkfalseaflsfnmaslfnldkasavnsfkjsacnasdds).style.display = "none";
     document.getElementById("polls-results-title").style.display = "block";
     document.getElementById("polls-results-contnent").style.display = "flex";
     document.getElementById("polls-back-results").style.visibility = "hidden";
