@@ -364,21 +364,21 @@ input:focus{
 
 .title{
     font-size: 5vw;
-    margin-bottom: 3.5vw;
+    margin-bottom: 5vw;
 }
 .menu{
-    margin-bottom: 2.5vw;
+    margin-bottom: 3vw;
 }
 .menu ul li{
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 }
 .menu ul li a{
-    font-size: 3.5vw;   
+    font-size: 5vw;   
 }
 
 .footer {
     position: fixed; 
-    height: 4.5vw;
+    height: 6.5vw;
     width: 100%;
     bottom: 0%;
     background-color: #111111;
@@ -390,7 +390,7 @@ input:focus{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2.5vw;
+    font-size: 3vw;
     white-space: nowrap;
 }
 .footer a{
@@ -399,8 +399,8 @@ input:focus{
     top: 50%;
     left: 0%;
     transform: translate(0, -50%);
-    margin-left: 1vw;
-    font-size: 2.5vw;
+    margin-left: 1.5vw;
+    font-size: 3vw;
 }
 
 
@@ -420,13 +420,13 @@ input:focus{
 #index-contact{
     display: flex;
     flex-direction: column;
-    font-size: 3.5vw;
+    font-size: 5vw;
 }
 #index-contact p{
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 }
 #index-contact a{
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 }
 
 /* Polls */
@@ -446,11 +446,11 @@ input:focus{
     color: #999999;
     background: transparent; 
     padding: 0%;
-    font-size: 3.5vw;
+    font-size: 5vw;
     text-align: center;
 }
 .polls-error{
-    font-size: 2.5vw;
+    font-size: 3vw;
     color: #d90511;
 }
 /* menu */
@@ -467,32 +467,32 @@ input:focus{
 /* create */
 #polls-create{
     display: none;
-    font-size: 3.5vw;
+    font-size: 5vw;
     flex-direction: column;
 }
 #polls-create a{
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 }
 #polls-title{
     margin: 0%;
 }
 #polls-message{
-    margin-top: 1vw;
-    margin-bottom: 1vw;
+    margin-top: 1.5vw;
+    margin-bottom: 1.5vw;
 }
 #polls-options{
     display: flex;
     flex-direction: column;
 }
 #polls-options input{
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 }
 #polls-show-settings{
-    font-size: 3.5vw;
+    font-size: 5vw;
 }
 #polls-settings{
     display: none;
-    font-size: 3.5vw;
+    font-size: 5vw;
 }
 #polls-settings a{
     display: block;
@@ -508,30 +508,30 @@ input:focus{
     flex-direction: column;
 }
 #polls-create-button{
-    font-size: 3.5vw;
+    font-size: 5vw;
 }
 #polls-code{
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 }
 
 /* answer */
 #polls-answer{
     display: none;
-    font-size: 3.5vw;
+    font-size: 5vw;
 }
 #polls-answer a{
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 }
 #polls-answer-title{
     font-size: 5vw;
 }
 #polls-answer-message{
-    margin-bottom: 1vw;
-    margin-top: 3.5vw;
+    margin-bottom: 1.5vw;
+    margin-top: 5vw;
 }
 #polls-text-field{
     display: none;
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 }
 #polls-answer div a{
     display: block;
@@ -543,23 +543,23 @@ input:focus{
 }
 #polls-results{
     display: none;
-    font-size: 3.5vw;
+    font-size: 5vw;
 }
 #polls-results-title{
     font-size: 5vw;
 }
 #polls-idk a{
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 }
 .polls-results-text-field{
     display: none;
     flex-direction: column;
 }
 .polls-results-text-field span{
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 }
 .polls-gdkjsagnk{
-    margin-bottom: 3.5vw;
+    margin-bottom: 5vw;
 }
 #polls-results a{
     display: block;
@@ -568,7 +568,7 @@ input:focus{
     display: none;
 }
 #polls-results-contnent{
-    padding-top: 3.5vw;
+    padding-top: 5vw;
 }
 /* Physics Engine*/
 #soon{
