@@ -1,6 +1,6 @@
 /*#d90511 #111111 #999999*/
 /*  1: 7vh
-    2: 2vw
+    2: 2vh
     3: 2.4vh
     3: 2.0vh*/
 
@@ -49,7 +49,7 @@ input:focus{
 /* --- DESKTOP --- */
 
 .title{
-    font-size: 4.5vh;
+    font-size: 5vh;
     margin-bottom: 3.5vh;
 }
 .menu{
@@ -209,7 +209,7 @@ input:focus{
     margin-bottom: 1vh;
 }
 #polls-answer-title{
-    font-size: 4.5vh;
+    font-size: 5vh;
 }
 #polls-answer-message{
     margin-bottom: 1vh;
@@ -232,7 +232,7 @@ input:focus{
     font-size: 3.5vh;
 }
 #polls-results-title{
-    font-size: 4.5vh;
+    font-size: 5vh;
 }
 #polls-idk a{
     margin-bottom: 1vh;
@@ -262,7 +262,7 @@ input:focus{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2vw;
+    font-size: 3.5vh;
 
 
 
@@ -279,7 +279,7 @@ title
     padding-left: 2.1%;    
 }
 .title a{
-    font-size: 4.5vh;
+    font-size: 5vh;
 }
 
 menu 
@@ -287,6 +287,320 @@ menu
     position: absolute;
     display: flex;
     height: 5vh;
+    align-items: center;
+    right: 0%;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding-right: 2.1%;
+}
+.menu ul{
+    display: flex;
+    min-width: fit-content;
+    gap: 2vh;
+}
+.menu ul li {
+    position: relative;
+    white-space: nowrap;
+    font-size: 2vh;
+}
+.menu ul li a:hover{
+    color: #d90511;
+}
+*/
+/*.bg {
+    margin: 0%;
+    min-width: 100%;
+    min-height: 100%
+}*/
+}
+
+
+/* --- MOBILE --- */
+@media (max-width: 1100px) {
+
+/* --- GLOBAL --- */
+@font-face{
+    font-family: imbPlex;
+    src: url(assets/IBM_Plex_Sans/IBMPlexSans-Regular.ttf);
+}
+* {
+    font-family: imbPlex;
+    color:#999999;
+    text-transform: uppercase;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color:#111111;
+    overflow-x: hidden 
+}
+h1{
+    margin: 0%;
+}
+ul {
+    margin: 0%;
+    padding: 0%;
+    list-style-type: none;
+}
+p {
+    margin: 0%;
+}
+a {
+    text-decoration: none;
+}
+a:hover{
+    color: #d90511;
+}
+input:focus{
+    outline: none;
+}
+
+
+/* --- DESKTOP --- */
+
+.title{
+    font-size: 5vw;
+    margin-bottom: 3.5vw;
+}
+.menu{
+    margin-bottom: 2.5vw;
+}
+.menu ul li{
+    margin-bottom: 1vw;
+}
+.menu ul li a{
+    font-size: 3.5vw;   
+}
+
+.footer {
+    position: fixed; 
+    height: 4.5vw;
+    width: 100%;
+    bottom: 0%;
+    background-color: #111111;
+
+}
+.footer p{
+    position: absolute;
+    height: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5vw;
+    white-space: nowrap;
+}
+.footer a{
+    position: absolute;
+    height: fit-content;
+    top: 50%;
+    left: 0%;
+    transform: translate(0, -50%);
+    margin-left: 1vw;
+    font-size: 2.5vw;
+}
+
+
+/* index */
+#index-wrapper{
+    position: absolute;
+    width: 100%;
+    min-height: max-content;
+    top: 20vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#index-contact{
+    display: flex;
+    flex-direction: column;
+    font-size: 3.5vw;
+}
+#index-contact p{
+    margin-bottom: 1vw;
+}
+#index-contact a{
+    margin-bottom: 1vw;
+}
+
+/* Polls */
+.polls-wrapper{
+    position: absolute;
+    width: 100%;
+    min-height: max-content;
+    top: 20vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.polls-wrapper input{
+    border: none;
+    color: #999999;
+    background: transparent; 
+    padding: 0%;
+    font-size: 3.5vw;
+    text-align: center;
+}
+.polls-error{
+    font-size: 2.5vw;
+    color: #d90511;
+}
+/* menu */
+#polls-menu a{
+    display: block;
+}
+#polls-menu li div{
+    display: flex;
+    align-items: center;
+}
+#polls-menu-ar{
+    display: none;
+}
+/* create */
+#polls-create{
+    display: none;
+    font-size: 3.5vw;
+    flex-direction: column;
+}
+#polls-create a{
+    margin-bottom: 1vw;
+}
+#polls-title{
+    margin: 0%;
+}
+#polls-message{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+#polls-options{
+    display: flex;
+    flex-direction: column;
+}
+#polls-options input{
+    margin-bottom: 1vw;
+}
+#polls-show-settings{
+    font-size: 3.5vw;
+}
+#polls-settings{
+    display: none;
+    font-size: 3.5vw;
+}
+#polls-settings a{
+    display: block;
+}
+#polls-set-max-val{
+    display: none;
+}
+#polls-multiple-answers-val{
+    display: none;
+}
+#polls-create-poll{
+    display: flex;
+    flex-direction: column;
+}
+#polls-create-button{
+    font-size: 3.5vw;
+}
+#polls-code{
+    margin-bottom: 1vw;
+}
+
+/* answer */
+#polls-answer{
+    display: none;
+    font-size: 3.5vw;
+}
+#polls-answer a{
+    margin-bottom: 1vw;
+}
+#polls-answer-title{
+    font-size: 5vw;
+}
+#polls-answer-message{
+    margin-bottom: 1vw;
+    margin-top: 3.5vw;
+}
+#polls-text-field{
+    display: none;
+    margin-bottom: 1vw;
+}
+#polls-answer div a{
+    display: block;
+}
+
+/* result */
+#polls-back-results{
+    visibility: hidden;
+}
+#polls-results{
+    display: none;
+    font-size: 3.5vw;
+}
+#polls-results-title{
+    font-size: 5vw;
+}
+#polls-idk a{
+    margin-bottom: 1vw;
+}
+.polls-results-text-field{
+    display: none;
+    flex-direction: column;
+}
+.polls-results-text-field span{
+    margin-bottom: 1vw;
+}
+.polls-gdkjsagnk{
+    margin-bottom: 3.5vw;
+}
+#polls-results a{
+    display: block;
+}
+#polls-results p{
+    display: none;
+}
+#polls-results-contnent{
+    padding-top: 3.5vw;
+}
+/* Physics Engine*/
+#soon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2vw;
+
+
+
+/*
+title 
+.survyes-title { 
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vw;
+    left: 20%;
+    top: 20%;
+    padding-left: 2.1%;    
+}
+.title a{
+    font-size: 5vw;
+}
+
+menu 
+.menu {
+    position: absolute;
+    display: flex;
+    height: 5vw;
     align-items: center;
     right: 0%;
     top: 50%;
@@ -318,4 +632,5 @@ menu
 /* --- MOBILE --- */
 @media (max-width: 1100px) {
 
+}
 }
