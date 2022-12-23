@@ -102,7 +102,10 @@ input:focus{
     align-items: center;
     text-align: center;
 }
-
+#index-wrapper img{
+    width: 50vh;
+    margin-bottom: 4.5vh;
+}
 #index-contact{
     display: flex;
     flex-direction: column;
@@ -359,26 +362,23 @@ input:focus{
     outline: none;
 }
 
-
-/* --- DESKTOP --- */
-
 .title{
-    font-size: 5vw;
-    margin-bottom: 5vw;
+    font-size: 7.5vw;
+    margin-bottom: 6vw;
 }
 .menu{
-    margin-bottom: 3vw;
+    margin-bottom: 6vw;
 }
 .menu ul li{
-    margin-bottom: 1.5vw;
+    margin-bottom: 2vw;
 }
 .menu ul li a{
-    font-size: 5vw;   
+    font-size: 6vw;   
 }
 
 .footer {
     position: fixed; 
-    height: 6.5vw;
+    height: 8vw;
     width: 100%;
     bottom: 0%;
     background-color: #111111;
@@ -390,7 +390,7 @@ input:focus{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3vw;
+    font-size: 4vw;
     white-space: nowrap;
 }
 .footer a{
@@ -399,8 +399,8 @@ input:focus{
     top: 50%;
     left: 0%;
     transform: translate(0, -50%);
-    margin-left: 1.5vw;
-    font-size: 3vw;
+    margin-left: 2vw;
+    font-size: 4vw;
 }
 
 
@@ -416,17 +416,20 @@ input:focus{
     align-items: center;
     text-align: center;
 }
-
+#index-wrapper img{
+    width: 50vw;
+    margin-bottom: 20vw;
+}
 #index-contact{
     display: flex;
     flex-direction: column;
-    font-size: 5vw;
+    font-size: 6vw;
 }
 #index-contact p{
-    margin-bottom: 1.5vw;
+    margin-bottom: 2vw;
 }
 #index-contact a{
-    margin-bottom: 1.5vw;
+    margin-bottom: 2vw;
 }
 
 /* Polls */
@@ -446,7 +449,7 @@ input:focus{
     color: #999999;
     background: transparent; 
     padding: 0%;
-    font-size: 5vw;
+    font-size: 6vw;
     text-align: center;
 }
 .polls-error{
@@ -467,32 +470,32 @@ input:focus{
 /* create */
 #polls-create{
     display: none;
-    font-size: 5vw;
+    font-size: 6vw;
     flex-direction: column;
 }
 #polls-create a{
-    margin-bottom: 1.5vw;
+    margin-bottom: 2vw;
 }
 #polls-title{
     margin: 0%;
 }
 #polls-message{
-    margin-top: 1.5vw;
-    margin-bottom: 1.5vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
 }
 #polls-options{
     display: flex;
     flex-direction: column;
 }
 #polls-options input{
-    margin-bottom: 1.5vw;
+    margin-bottom: 2vw;
 }
 #polls-show-settings{
-    font-size: 5vw;
+    font-size: 6vw;
 }
 #polls-settings{
     display: none;
-    font-size: 5vw;
+    font-size: 6vw;
 }
 #polls-settings a{
     display: block;
@@ -508,30 +511,30 @@ input:focus{
     flex-direction: column;
 }
 #polls-create-button{
-    font-size: 5vw;
+    font-size: 6vw;
 }
 #polls-code{
-    margin-bottom: 1.5vw;
+    margin-bottom: 2vw;
 }
 
 /* answer */
 #polls-answer{
     display: none;
-    font-size: 5vw;
+    font-size: 6vw;
 }
 #polls-answer a{
-    margin-bottom: 1.5vw;
+    margin-bottom: 2vw;
 }
 #polls-answer-title{
-    font-size: 5vw;
+    font-size: 6vw;
 }
 #polls-answer-message{
-    margin-bottom: 1.5vw;
-    margin-top: 5vw;
+    margin-bottom: 2vw;
+    margin-top: 6vw;
 }
 #polls-text-field{
     display: none;
-    margin-bottom: 1.5vw;
+    margin-bottom: 2vw;
 }
 #polls-answer div a{
     display: block;
@@ -543,23 +546,23 @@ input:focus{
 }
 #polls-results{
     display: none;
-    font-size: 5vw;
+    font-size: 6vw;
 }
 #polls-results-title{
-    font-size: 5vw;
+    font-size: 6vw;
 }
 #polls-idk a{
-    margin-bottom: 1.5vw;
+    margin-bottom: 2vw;
 }
 .polls-results-text-field{
     display: none;
     flex-direction: column;
 }
 .polls-results-text-field span{
-    margin-bottom: 1.5vw;
+    margin-bottom: 2vw;
 }
 .polls-gdkjsagnk{
-    margin-bottom: 5vw;
+    margin-bottom: 6vw;
 }
 #polls-results a{
     display: block;
@@ -568,7 +571,7 @@ input:focus{
     display: none;
 }
 #polls-results-contnent{
-    padding-top: 5vw;
+    padding-top: 6vw;
 }
 /* Physics Engine*/
 #soon{
@@ -587,20 +590,20 @@ title
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 5vw;
+    height: 6vw;
     left: 20%;
     top: 20%;
     padding-left: 2.1%;    
 }
 .title a{
-    font-size: 5vw;
+    font-size: 6vw;
 }
 
 menu 
 .menu {
     position: absolute;
     display: flex;
-    height: 5vw;
+    height: 6vw;
     align-items: center;
     right: 0%;
     top: 50%;
