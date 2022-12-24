@@ -49,7 +49,7 @@ input:focus{
 /* --- DESKTOP --- */
 
 .title{
-    font-size: 5vh;
+    font-size: 4.5vh;
     margin-bottom: 3.5vh;
 }
 .menu{
@@ -112,10 +112,10 @@ input:focus{
     font-size: 3.5vh;
 }
 #index-contact p{
-    margin-bottom: 1vh;
+    margin-bottom: 1.5vh;
 }
 #index-contact a{
-    margin-bottom: 1vh;
+    margin-bottom: 1.5vh;
 }
 
 /* Polls */
@@ -212,7 +212,7 @@ input:focus{
     margin-bottom: 1vh;
 }
 #polls-answer-title{
-    font-size: 5vh;
+   font-size: 4.5vh;
 }
 #polls-answer-message{
     margin-bottom: 1vh;
@@ -235,7 +235,7 @@ input:focus{
     font-size: 3.5vh;
 }
 #polls-results-title{
-    font-size: 5vh;
+   font-size: 4.5vh;
 }
 #polls-idk a{
     margin-bottom: 1vh;
@@ -266,104 +266,13 @@ input:focus{
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3.5vh;
-
-
-
-/*
-title 
-.survyes-title { 
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5vh;
-    left: 20%;
-    top: 20%;
-    padding-left: 2.1%;    
 }
-.title a{
-    font-size: 5vh;
-}
-
-menu 
-.menu {
-    position: absolute;
-    display: flex;
-    height: 5vh;
-    align-items: center;
-    right: 0%;
-    top: 50%;
-    transform: translate(0, -50%);
-    padding-right: 2.1%;
-}
-.menu ul{
-    display: flex;
-    min-width: fit-content;
-    gap: 2vh;
-}
-.menu ul li {
-    position: relative;
-    white-space: nowrap;
-    font-size: 2vh;
-}
-.menu ul li a:hover{
-    color: #d90511;
-}
-*/
-/*.bg {
-    margin: 0%;
-    min-width: 100%;
-    min-height: 100%
-}*/
-}
-
 
 /* --- MOBILE --- */
 @media (max-width: 1100px) {
 
-/* --- GLOBAL --- */
-@font-face{
-    font-family: imbPlex;
-    src: url(assets/IBM_Plex_Sans/IBMPlexSans-Regular.ttf);
-}
-* {
-    font-family: imbPlex;
-    color:#999999;
-    text-transform: uppercase;
-}
-html {
-    height: 100%;
-}
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color:#111111;
-    overflow-x: hidden 
-}
-h1{
-    margin: 0%;
-}
-ul {
-    margin: 0%;
-    padding: 0%;
-    list-style-type: none;
-}
-p {
-    margin: 0%;
-}
-a {
-    text-decoration: none;
-}
-a:hover{
-    color: #d90511;
-}
-input:focus{
-    outline: none;
-}
-
 .title{
-    font-size: 7.5vw;
+    font-size: 7vw;
     margin-bottom: 6vw;
 }
 .menu{
@@ -378,7 +287,7 @@ input:focus{
 
 .footer {
     position: fixed; 
-    height: 8vw;
+    height: 6vw;
     width: 100%;
     bottom: 0%;
     background-color: #111111;
