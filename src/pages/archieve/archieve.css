@@ -7,7 +7,7 @@
 /* --- GLOBAL --- */
 @font-face{
     font-family: imbPlex;
-    src: url(../assets/IBM_Plex_Sans/IBMPlexSans-Regular.ttf);
+    src: url(../../assets/IBM_Plex_Sans/IBMPlexSans-Regular.ttf);
 }
 * {
     font-family: imbPlex;
