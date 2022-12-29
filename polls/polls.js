@@ -41,6 +41,7 @@ let optionHtml = {
 }
 let pollData;
 let pollCode;
+let key;
 
 
 // menu
@@ -163,7 +164,6 @@ function multipleAnswers(){
 
 
 function createPoll(){
-    pollCode =  document.getElementById("polls-code").value;
     pollData = {
         "title": document.getElementById("polls-title").value,
         "message": document.getElementById("polls-message").value,
@@ -246,15 +246,14 @@ function createPoll(){
         document.getElementById("polls-create-error").innerHTML = "ERROR";
         return 1;
     }
-
-    if (/\s/.test(pollCode) || /^ *$/.test(pollCode)) {
-        document.getElementById("polls-create-error").innerHTML = "ERROR";
-        return 1;
-    }
     
-    sendPoll(pollCode, pollData);
-    document.getElementById("polls-create-error").innerHTML = "POLL CREATED SUCCESFULLY";
+    sendPoll(pollData);
+    document.getElementById("polls-generated-code").innerHTML = window.key;
+    document.getElementById("polls-generated-code").style.display = "inline";
     document.getElementById("polls-create-error").style.color = "#33CC00";
+    document.getElementById("polls-create-error").innerHTML = "POLL CREATED SUCCESFULLY";
+
+    
 }
 
 // answer

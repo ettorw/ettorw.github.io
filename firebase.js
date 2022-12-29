@@ -15,8 +15,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
 
-window.sendPoll = function(pollTitle, pollData){
-    set(ref(db, pollTitle), pollData);
+window.sendPoll = function(pollData){
+    window.key = push(ref(db, "polls")).key;
+    set(ref(db, window.key), pollData);
 }
 window.getPoll = function(pollCode){
     return get(ref(db, pollCode));
@@ -24,6 +25,6 @@ window.getPoll = function(pollCode){
 window.sendVote = function(pollCode, option, name){
     set(ref(db, pollCode + "/results/option" + option + "/val"), pollData["results"]["option" + option]["val"] + 1);
     if (pollData.settings.textField){
-        push(ref(db, pollCode + "/results/option" + option + "/names"),  name)
+        push(ref(db, pollCode + "/results/option" + option + "/names"),  name);
     }
 }
